@@ -1,0 +1,6 @@
+package zhang.Rpc.filter.client;
+
+
+import zhang.Rpc.filter.Filter;
+
+public interface ClientAfterFilter extends Filter {}

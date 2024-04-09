@@ -1,0 +1,2 @@
+consistentHash=zhang.Rpc.router.impl.ConsistentHashLoadBalancer
+roundRobin=zhang.Rpc.router.impl.RoundRobinLoadBalancer

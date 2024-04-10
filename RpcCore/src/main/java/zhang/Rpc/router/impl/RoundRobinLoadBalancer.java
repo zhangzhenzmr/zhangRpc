@@ -20,6 +20,7 @@ public class RoundRobinLoadBalancer implements LoadBalancer {
 
     @Override
     public ServiceMetaRes select(Object[] params, String serviceName) {
+
         // 获取注册中心
         RegistryService registryService = ExtensionLoader.getInstance().get(RpcProperties.getInstance().getRegisterType());
 

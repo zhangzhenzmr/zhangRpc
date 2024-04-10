@@ -1,6 +1,7 @@
 package zhang.Rpc.registry;
 
 
+import com.alibaba.nacos.api.exception.NacosException;
 import zhang.Rpc.common.entity.ServiceMeta;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public interface RegistryService {
      * @param serviceName
      * @return
      */
-    List<ServiceMeta> discoveries(String serviceName);
+    List<ServiceMeta> discoveries(String serviceName)  ;
     /**
      * 关闭
      * @throws IOException

@@ -25,9 +25,9 @@ public class ExtensionLoader {
 
     private static String[] prefixs = {SYS_EXTENSION_LOADER_DIR_PREFIX, DIY_EXTENSION_LOADER_DIR_PREFIX};
 
-    // bean定义信息 key: 定义的key value：具体类
+    // key: 自定义标识符 value：具体类
     private static Map<String, Class> extensionClassCache = new ConcurrentHashMap<>();
-    // bean 定义信息 key：接口 value：接口子类s
+    // key：接口的全限定名 value：所有实现接口的子类
     private static Map<String, Map<String,Class>> extensionClassCaches = new ConcurrentHashMap<>();
 
     // 实例化的bean

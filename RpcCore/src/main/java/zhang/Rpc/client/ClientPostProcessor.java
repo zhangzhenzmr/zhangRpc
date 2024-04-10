@@ -51,8 +51,7 @@ public class ClientPostProcessor implements InitializingBean, BeanPostProcessor,
 
         Field[] fields = bean.getClass().getDeclaredFields();
 
-        for (Field field:fields)
-        {
+        for (Field field:fields) {
             //将标记RpcReference注解生成代理对象
             if (field.isAnnotationPresent(RpcReference.class)) {
               final RpcReference rpcReference = field.getAnnotation(RpcReference.class);

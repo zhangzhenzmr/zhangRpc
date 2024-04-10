@@ -15,10 +15,7 @@ import zhang.Rpc.protocol.RpcProtocol;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
@@ -52,6 +49,8 @@ public class ThreadPollFactory
             thread.setDaemon(true);
             return thread;
         });
+
+        startClearMonitor();
     }
 
     private ThreadPollFactory(){};
@@ -148,5 +147,15 @@ public class ThreadPollFactory
         // 调用方法并返回结果
         return fastClass.invoke(methodIndex, serviceBean, parameters);
     }
+
+    /**
+     * 清理慢请求
+     */
+    private static void startClearMonitor(){
+        Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(()->{
+            slowTaskMap.clear();
+        },5,5,TimeUnit.MINUTES);
+    }
+
 
 }

@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * @description: 一致性哈希
+ * 一致性哈希
  */
 public class ConsistentHashLoadBalancer implements LoadBalancer {
 

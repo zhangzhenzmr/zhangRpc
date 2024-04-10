@@ -10,7 +10,7 @@ import zhang.Rpc.protocol.serialization.RpcSerialization;
 import zhang.Rpc.protocol.serialization.SerializationFactory;
 
 /**
- * @description: 编码器
+ *编码器
  */
 public class RpcEncoder extends MessageToByteEncoder<RpcProtocol<Object>> {
 

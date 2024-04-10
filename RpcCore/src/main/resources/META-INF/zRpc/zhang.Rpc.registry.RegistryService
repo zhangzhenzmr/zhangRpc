@@ -1,2 +1,3 @@
 redis=zhang.Rpc.registry.RedisRegistry
 zookeeper=zhang.Rpc.registry.ZookeeperRegistry
+nacos=zhang.Rpc.registry.NacosRegistry

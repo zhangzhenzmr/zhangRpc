@@ -32,7 +32,7 @@ public class RpcProperties {
      * 注册中心类型
      */
     @PropertiesField
-    private String registerType = RegistryRules.ZOOKEEPER;
+    private String registerType = RegistryRules.REDIS;
 
     /**
      * 注册中心密码
@@ -84,7 +84,7 @@ public class RpcProperties {
 
     public void setRegisterType(String registerType) {
         if(registerType == null || registerType.equals("")){
-            registerType = RegistryRules.ZOOKEEPER;
+            registerType = RegistryRules.REDIS;
         }
         this.registerType = registerType;
     }
